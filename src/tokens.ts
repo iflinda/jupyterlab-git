@@ -568,20 +568,24 @@ export namespace Git {
      */
     export interface IDiffWidget extends Widget {
       /**
-       * Refresh the diff widget
-       *
-       * Note: Update the content and recompute the diff
+       * Diff model
        */
-      refresh(): Promise<void>;
-      /**
-       * Checks if the conflicted file has been resolved.
-       */
-      isFileResolved: boolean;
+      readonly model: Git.Diff.IModel;
       /**
        * Gets the file model of a resolved merge conflict,
        * and rejects if unable to retrieve
        */
       getResolvedFile(): Promise<Partial<Contents.IModel>>;
+      /**
+       * Checks if the conflicted file has been resolved.
+       */
+      readonly isFileResolved: boolean;
+      /**
+       * Refresh the diff widget
+       *
+       * Note: Update the content and recompute the diff
+       */
+      refresh(): Promise<void>;
     }
 
     /**
@@ -957,6 +961,7 @@ export namespace Git {
    */
   export interface ISingleCommitFilePathInfo {
     code: number;
+    commit_body?: string;
     modified_file_note?: string;
     modified_files_count?: string;
     number_of_insertions?: string;
@@ -1148,7 +1153,8 @@ export enum ContextCommandIDs {
   gitFileHistory = 'git:context-history',
   gitIgnore = 'git:context-ignore',
   gitIgnoreExtension = 'git:context-ignoreExtension',
-  gitNoAction = 'git:no-action'
+  gitNoAction = 'git:no-action',
+  openFileFromDiff = 'git:open-file-from-diff'
 }
 
 /**

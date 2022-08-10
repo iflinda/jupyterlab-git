@@ -238,6 +238,24 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "BoscoCHW",
+      "name": "Bosco Chan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/45115214?v=4",
+      "profile": "https://github.com/BoscoCHW",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "iflinda",
+      "name": "Linda Ngoc Nguyen",
+      "avatar_url": "https://avatars.githubusercontent.com/u/68607795?v=4",
+      "profile": "https://www.lindaful.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
